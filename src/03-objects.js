@@ -37,16 +37,11 @@ const invoice = {
         return `Hola ${this.client.name}`;
     }
 };
+/* 
+invoice.client = 'Pepe Roe'; */
+/* invoice.total = 5000; */
+console.log(invoice);
 
-/* const invoice2 = invoice; */
-const invoice2 = { ...invoice };
-
-const result = invoice == invoice2;
-
-if (result) console.log(result);
-else console.log('no son iguales');
-
-invoice2.id = 20;
-
-console.log(invoice.id);
-console.log(invoice2.id);
+const greeting = invoice.greeting();
+console.log(greeting);
+console.log(`Total: ${invoice.total}`);
