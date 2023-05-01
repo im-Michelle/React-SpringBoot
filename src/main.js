@@ -1,13 +1,26 @@
 
 
-let products = ['mesa', 'silla', 'notebook', 'teclado'];
 
-products = products.concat('pantalla lcd', 'sony tv');
+/* promise
+        .then(response => response.json())
+        .then(data => console.log(data)); */
 
-const fruits = ['peras', 'manzanas', 'sandias', 'frutillas'];
 
-const market = [...fruits, ...products, 'lechuga', 'papas', 'uvas'];
-const market2 = [products.concat(fruits).concat('lechuga', 'papas', 'uvas')];
+const findAllUsers = async() => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const users = await response.json();
+    const ul = document.createElement('ul');
 
-console.log(products);
-console.log(market);
+    users.forEach(user => {
+        const li = document.createElement('li');
+        li.innerText = user.name;
+        ul.append(li);
+        console.log(user.name);
+    });
+
+    document.getElementById('root').append(ul);
+}
+
+findAllUsers();
+// console.log(users);
+console.log('Hola que tal!');
